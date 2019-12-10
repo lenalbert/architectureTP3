@@ -15,6 +15,7 @@ namespace TP3.Controllers
         private ClinicContext db = new ClinicContext();
 
         // GET: PatientRecords
+        [Authorize(Roles = "Doctor")]
         public ActionResult Index()
         {
             var patientRecord = db.PatientRecord.Include(p => p.Patient);
@@ -22,6 +23,7 @@ namespace TP3.Controllers
         }
 
         // GET: PatientRecords/Details/5
+        [Authorize(Roles = "Doctor, Patient")]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -37,6 +39,7 @@ namespace TP3.Controllers
         }
 
         // GET: PatientRecords/Create
+        [Authorize(Roles = "Doctor")]
         public ActionResult Create()
         {
             ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "LastNamePatient");
@@ -48,6 +51,7 @@ namespace TP3.Controllers
         // plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Doctor")]
         public ActionResult Create([Bind(Include = "PatientRecordID,PatientID,PatientHistory")] PatientRecord patientRecord)
         {
             if (ModelState.IsValid)
@@ -62,6 +66,7 @@ namespace TP3.Controllers
         }
 
         // GET: PatientRecords/Edit/5
+        [Authorize(Roles = "Doctor")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -82,6 +87,7 @@ namespace TP3.Controllers
         // plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Doctor")]
         public ActionResult Edit([Bind(Include = "PatientRecordID,PatientID,PatientHistory")] PatientRecord patientRecord)
         {
             if (ModelState.IsValid)
@@ -95,6 +101,7 @@ namespace TP3.Controllers
         }
 
         // GET: PatientRecords/Delete/5
+        [Authorize(Roles = "Doctor")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -112,6 +119,7 @@ namespace TP3.Controllers
         // POST: PatientRecords/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Doctor")]
         public ActionResult DeleteConfirmed(int id)
         {
             PatientRecord patientRecord = db.PatientRecord.Find(id);
