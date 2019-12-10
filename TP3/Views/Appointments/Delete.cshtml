@@ -1,0 +1,72 @@
+﻿@model TP3.Models.Appointment
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Appointment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Doctor.DoctorID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Doctor.DoctorID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Patient.LastNamePatient)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Patient.LastNamePatient)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Reason.Label)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Reason.Label)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Room.RoomID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Room.RoomID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AppointmentDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AppointmentDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StartTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartTime)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
