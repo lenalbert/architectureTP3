@@ -29,8 +29,8 @@ namespace TP3.Migration.Clinic
             context.DoctorTypes.AddOrUpdate(p => new {p.Label}, Data.getDoctorTypes().ToArray());
             context.Doctor.AddOrUpdate(p => new {p.DoctorTypeID, p.EmployeeID}, Data.getDoctors().ToArray());
             context.PatientRecord.AddOrUpdate(p => new { p.PatientHistory,p.PatientID }, Data.getPatientRecords().ToArray());
-        //    context.Appointment.AddOrUpdate(p => new { p.PatientID,p.DoctorID,p.ReasonID,p.RoomID,/*p.AppointmentDate,p.StartTime */ }, Data.getAppointments().ToArray());
-
+            //    context.Appointment.AddOrUpdate(p => new { p.PatientID,p.DoctorID,p.ReasonID,p.RoomID,/*p.AppointmentDate,p.StartTime */ }, Data.getAppointments().ToArray());
+            context.RoleViewModels.AddOrUpdate(p => new { p.Id,p.Name}, Data.getRoleViewModels().ToArray());
 
             context.SaveChanges();
         }

@@ -132,5 +132,28 @@ namespace TP3.DAL
             return appointment;
         }
 
+        public static List<RoleViewModel> getRoleViewModels()
+        {
+            List<RoleViewModel> roleviewmodel = new List<RoleViewModel>()
+            {
+                new RoleViewModel()
+                {
+                    Id="0",
+                    Name="Secretary"
+                },
+                new RoleViewModel()
+                {
+                    Id="1",
+                    Name="Doctor"
+                },
+                new RoleViewModel()
+                {
+                    Id="2",
+                    Name="Patient"
+                },
+            };
+            return roleviewmodel;
+        }
+
     }
 }
