@@ -15,7 +15,7 @@
             @Html.DisplayNameFor(model => model.Doctor.DoctorID)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Patient.LastNamePatient)
+            @Html.DisplayNameFor(model => model.Patient.FullName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Reason.Label)
@@ -33,31 +33,31 @@
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Doctor.DoctorID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Patient.LastNamePatient)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Reason.Label)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Room.RoomID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AppointmentDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.StartTime)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.AppointmentID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.AppointmentID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.AppointmentID })
-        </td>
-    </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Doctor.DoctorID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Patient.FullName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Reason.Label)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Room.RoomID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.AppointmentDate)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.StartTime)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.AppointmentID }) |
+        @Html.ActionLink("Details", "Details", new { id = item.AppointmentID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.AppointmentID })
+    </td>
+</tr>
 }
 
 </table>

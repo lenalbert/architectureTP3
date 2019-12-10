@@ -40,9 +40,9 @@ namespace TP3.Controllers
         public ActionResult Create()
         {
             ViewBag.DoctorID = new SelectList(db.Doctor, "DoctorID", "DoctorID");
-            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "LastNamePatient");
+            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FullName");
             ViewBag.ReasonID = new SelectList(db.Reasons, "ReasonID", "Label");
-            ViewBag.RoomID = new SelectList(db.Room, "RoomID", "RoomID");
+            ViewBag.RoomID = new SelectList(db.Room, "RoomID", "RoomLabel");
             return View();
         }
 

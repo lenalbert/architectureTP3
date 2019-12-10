@@ -9,9 +9,7 @@
 
 namespace TP3.Models
 {
-    using System;
-    using System.Collections.Generic;
-    
+
     public partial class Appointment
     {
         public int AppointmentID { get; set; }

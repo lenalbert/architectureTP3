@@ -11,12 +11,18 @@ namespace TP3.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Patient
     {    
         public int PatientID { get; set; }
         public string LastNamePatient { get; set; }
         public string FirstNamePatient { get; set; }
+        public string FullName{get
+            {
+                return FirstNamePatient + " " + LastNamePatient;
+            }
+        }
         public string EmailPatient { get; set; }
         public string AddressPatient { get; set; }
         public string TelephonePatient { get; set; }
@@ -26,5 +32,8 @@ namespace TP3.Models
         public virtual ICollection<PatientRecord> PatientRecords { get; set; }
 
         public virtual ApplicationUser User { get; set; }
+
+
     }
+
 }
