@@ -15,6 +15,7 @@ namespace TP3.Controllers
         private ClinicContext db = new ClinicContext();
 
         // GET: Appointments
+        [Authorize(Roles = "Secretary, Doctor")]
         public ActionResult Index()
         {
             var appointment = db.Appointment.Include(a => a.Doctor).Include(a => a.Patient).Include(a => a.Reason).Include(a => a.Room);
@@ -22,6 +23,7 @@ namespace TP3.Controllers
         }
 
         // GET: Appointments/Details/5
+        [Authorize(Roles = "Secretary, Doctor")]
         public ActionResult Details(int? id)
         {
             if (id == null)
