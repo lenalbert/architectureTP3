@@ -15,6 +15,7 @@ namespace TP3.Models
     public partial class PatientRecord
     {
         public int PatientRecordID { get; set; }
+        public int PatientID { get; set; }
         public string PatientHistory { get; set; }
     
         public virtual Patient Patient { get; set; }

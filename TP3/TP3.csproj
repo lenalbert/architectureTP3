@@ -200,6 +200,10 @@
     <Compile Include="Migration\Clinic\201912101858570_UpdateDB.Designer.cs">
       <DependentUpon>201912101858570_UpdateDB.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migration\Clinic\201912101914189_UpdatePAtientRecordsDB.cs" />
+    <Compile Include="Migration\Clinic\201912101914189_UpdatePAtientRecordsDB.Designer.cs">
+      <DependentUpon>201912101914189_UpdatePAtientRecordsDB.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migration\Clinic\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Appointment.cs" />
@@ -345,6 +349,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migration\Clinic\201912101858570_UpdateDB.resx">
       <DependentUpon>201912101858570_UpdateDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migration\Clinic\201912101914189_UpdatePAtientRecordsDB.resx">
+      <DependentUpon>201912101914189_UpdatePAtientRecordsDB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
