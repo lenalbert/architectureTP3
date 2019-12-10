@@ -1,0 +1,74 @@
+﻿@model TP3.Models.Employee
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Employee</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.LastNameEmployee)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastNameEmployee)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstNameEmployee)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstNameEmployee)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmailEmployee)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmailEmployee)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AddressEmployee)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AddressEmployee)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TelephoneEmployee)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TelephoneEmployee)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BirthDateEmployee)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BirthDateEmployee)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HiringDateEmployee)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HiringDateEmployee)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.EmployeeID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

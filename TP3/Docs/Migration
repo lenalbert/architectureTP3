@@ -1,0 +1,5 @@
+Enable-Migrations -ContextTypeName ClinicContext -MigrationsDirectory Migration\Clinic
+
+add-migration -ConfigurationTypeName TP3.Migration.Clinic.Configuration "InitialCreate"
+
+update-database -ConfigurationTypeName TP3.Migration.Clinic.Configuration

@@ -1,0 +1,66 @@
+﻿@model TP3.Models.Patient
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Patient</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.LastNamePatient)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastNamePatient)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstNamePatient)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstNamePatient)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmailPatient)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmailPatient)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AddressPatient)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AddressPatient)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TelephonePatient)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TelephonePatient)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BirthDatePatient)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BirthDatePatient)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PatientID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
