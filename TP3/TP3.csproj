@@ -179,6 +179,7 @@
     <Compile Include="Controllers\PatientsController.cs" />
     <Compile Include="Controllers\ReasonsController.cs" />
     <Compile Include="Controllers\RoomsController.cs" />
+    <Compile Include="DAL\Data.cs" />
     <Compile Include="DAL\ClinicContext.cs" />
     <Compile Include="DAL\ClinicIntitializer.cs" />
     <Compile Include="Global.asax.cs">
