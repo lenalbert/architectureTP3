@@ -20,7 +20,7 @@ namespace TP3.Models
         public string FirstNameEmployee { get; set; }
         public string EmailEmployee { get; set; }
         public string AddressEmployee { get; set; }
-        public int TelephoneEmployee { get; set; }
+        public string TelephoneEmployee { get; set; }
         public Nullable<System.DateTime> BirthDateEmployee { get; set; }
         public Nullable<System.DateTime> HiringDateEmployee { get; set; }
     

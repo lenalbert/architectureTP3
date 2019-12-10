@@ -187,6 +187,10 @@
     <Compile Include="Migration\Clinic\201912101643427_InitialCreate.Designer.cs">
       <DependentUpon>201912101643427_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migration\Clinic\201912101743298_InitialCreate1.cs" />
+    <Compile Include="Migration\Clinic\201912101743298_InitialCreate1.Designer.cs">
+      <DependentUpon>201912101743298_InitialCreate1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migration\Clinic\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Appointment.cs" />
@@ -204,10 +208,6 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\DentalClinicDB.mdf" />
-    <Content Include="App_Data\DentalClinicDB_log.ldf">
-      <DependentUpon>DentalClinicDB.mdf</DependentUpon>
-    </Content>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -305,7 +305,9 @@
     <Content Include="Views\Rooms\Edit.cshtml" />
     <Content Include="Views\Rooms\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -322,6 +324,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migration\Clinic\201912101643427_InitialCreate.resx">
       <DependentUpon>201912101643427_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migration\Clinic\201912101743298_InitialCreate1.resx">
+      <DependentUpon>201912101743298_InitialCreate1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
