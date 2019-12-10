@@ -22,20 +22,55 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Accueil", "Index", "Home")</li>
-                    <li>@Html.ActionLink("À propos de", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Prendre un rendez-vous", "Create", "Appointments")</li>
+                    <li>@Html.ActionLink("Consulter un dossier", "Index", "Patients")</li>
+                    <li>@Html.Partial("_LoginPartial")</li>
                 </ul>
-                @Html.Partial("_LoginPartial")
+                <div class="navbar-right">
+                    @using (Html.BeginForm("Index", "Patients", FormMethod.Post, new { @class = "form-inline my-2 my-lg-0" }))
+                    {
+                        @Html.TextBox("LastName", null, new { @class = "form-control mr-sm-2", @placeholder = "Rechercher un dossier" })
+                        <input class="btn btn-outline-light" type="submit" value="Rechercher" />
+                    }
+                </div>
             </div>
         </div>
     </div>
     <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Clinique Dentaire</p>
-        </footer>
+        <div class="footer navbar-fixed-bottom">
+            <hr />
+            <center>
+                <footer class="fixed-bottom">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h4>Clinique dentaire</h4>
+                            <p>
+                                Bienvenue à la clinique dentaire du cours d'Archi
+                            </p>
+                            <h4>Téléphone</h4>
+                            <p>(418) 545-5011</p>
+                        </div>
+                        <div class="col-md-4">
+                            <h4>Adresse</h4>
+                            <p>
+                                555 boulevard de l'université,</br>
+                                Chicoutimi (QC), G7H 6J3
+                            </p>
+                        </div>
+                        <div class="col-md-4">
+                            <h4>Horaires</h4>
+                            <p>
+                                Lundi à Vendredi : 8h - 20h</br>
+                                Samedi : 8h - 12h</br>
+                                Dimanche : Fermé</br>
+                            </p>
+                        </div>
+                    </div>
+                    <p>&copy; @DateTime.Now.Year - Thongrasamy, Casado, Albert, Pichollet, Boni</p>
+            </center>
+            </footer>
+        </div>
     </div>
 
     @Scripts.Render("~/bundles/jquery")

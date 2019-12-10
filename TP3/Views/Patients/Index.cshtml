@@ -9,6 +9,24 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+
+<h4>Recherche avancée</h4>
+@using (Html.BeginForm("Index", "Patients", FormMethod.Post, new { @class = "form-inline my-2 my-lg-0" }))
+{
+    @Html.TextBox("LastName", null, new { @class = "form-control mr-sm-2", @placeholder = "Nom de famille" })
+    @Html.TextBox("FirstName", null, new { @class = "form-control mr-sm-2", @placeholder = "Prénom" })
+    @Html.TextBox("Email", null, new { @class = "form-control mr-sm-2", @placeholder = "Email" })
+    @Html.TextBox("Address", null, new { @class = "form-control mr-sm-2", @placeholder = "Addresse" })
+    @Html.TextBox("Telephone", null, new { @type = "number", @class = "form-control mr-sm-2", @placeholder = "Téléphone" })
+
+    <input class="btn btn-outline-light" type="submit" value="Rechercher" />
+}
+
+@Html.ActionLink("Réinitialiser", "Index", "Patients")
+
+<br />
+<br />
+
 <table class="table">
     <tr>
         <th>
@@ -32,32 +50,33 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.LastNamePatient)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FirstNamePatient)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.EmailPatient)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AddressPatient)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TelephonePatient)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.BirthDatePatient)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.PatientID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.PatientID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.PatientID })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastNamePatient)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstNamePatient)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmailPatient)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AddressPatient)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TelephonePatient)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BirthDatePatient)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.PatientID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.PatientID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.PatientID })
+            </td>
+        </tr>
+    }
 
 </table>

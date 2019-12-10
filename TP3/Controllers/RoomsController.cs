@@ -46,7 +46,7 @@ namespace TP3.Controllers
         // plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "RoomID")] Room room)
+        public ActionResult Create([Bind(Include = "RoomID,RoomLabel")] Room room)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace TP3.Controllers
         // plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "RoomID")] Room room)
+        public ActionResult Edit([Bind(Include = "RoomID,RoomLabel")] Room room)
         {
             if (ModelState.IsValid)
             {

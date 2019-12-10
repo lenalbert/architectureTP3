@@ -17,7 +17,8 @@ namespace TP3.Controllers
         // GET: Doctors
         public ActionResult Index()
         {
-            return View(db.Doctor.ToList());
+            var doctor = db.Doctor.Include(d => d.DoctorType).Include(d => d.Employee);
+            return View(doctor.ToList());
         }
 
         // GET: Doctors/Details/5
@@ -38,6 +39,8 @@ namespace TP3.Controllers
         // GET: Doctors/Create
         public ActionResult Create()
         {
+            ViewBag.DoctorTypeID = new SelectList(db.DoctorTypes, "DoctorTypeID", "Label");
+            ViewBag.EmployeeID = new SelectList(db.Employees, "EmployeeID", "LastNameEmployee");
             return View();
         }
 
@@ -46,7 +49,7 @@ namespace TP3.Controllers
         // plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "DoctorID")] Doctor doctor)
+        public ActionResult Create([Bind(Include = "DoctorID,EmployeeID,DoctorTypeID")] Doctor doctor)
         {
             if (ModelState.IsValid)
             {
@@ -55,6 +58,8 @@ namespace TP3.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.DoctorTypeID = new SelectList(db.DoctorTypes, "DoctorTypeID", "Label", doctor.DoctorTypeID);
+            ViewBag.EmployeeID = new SelectList(db.Employees, "EmployeeID", "LastNameEmployee", doctor.EmployeeID);
             return View(doctor);
         }
 
@@ -70,6 +75,8 @@ namespace TP3.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.DoctorTypeID = new SelectList(db.DoctorTypes, "DoctorTypeID", "Label", doctor.DoctorTypeID);
+            ViewBag.EmployeeID = new SelectList(db.Employees, "EmployeeID", "LastNameEmployee", doctor.EmployeeID);
             return View(doctor);
         }
 
@@ -78,7 +85,7 @@ namespace TP3.Controllers
         // plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "DoctorID")] Doctor doctor)
+        public ActionResult Edit([Bind(Include = "DoctorID,EmployeeID,DoctorTypeID")] Doctor doctor)
         {
             if (ModelState.IsValid)
             {
@@ -86,6 +93,8 @@ namespace TP3.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.DoctorTypeID = new SelectList(db.DoctorTypes, "DoctorTypeID", "Label", doctor.DoctorTypeID);
+            ViewBag.EmployeeID = new SelectList(db.Employees, "EmployeeID", "LastNameEmployee", doctor.EmployeeID);
             return View(doctor);
         }
 

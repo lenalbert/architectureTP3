@@ -15,7 +15,10 @@ namespace TP3.Models
     public partial class Doctor
     {
         public int DoctorID { get; set; }
+        public int EmployeeID { get; set; }
+        public int DoctorTypeID { get; set; }
 
+        public virtual ICollection<Appointment> Appointments { get; set; }
         public virtual DoctorType DoctorType { get; set; }
         public virtual Employee Employee { get; set; }
     }

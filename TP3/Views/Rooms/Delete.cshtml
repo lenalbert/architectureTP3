@@ -11,6 +11,14 @@
     <h4>Room</h4>
     <hr />
     <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RoomLabel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RoomLabel)
+        </dd>
+
     </dl>
 
     @using (Html.BeginForm()) {

@@ -15,9 +15,32 @@ namespace TP3.Controllers
         private ClinicContext db = new ClinicContext();
 
         // GET: Patients
-        public ActionResult Index()
+        public ActionResult Index(string LastName, string FirstName, string Email, string Address, string Telephone)
         {
-            return View(db.Patients.ToList());
+            var patient = from p in db.Patients
+                          select p;
+
+            if (!String.IsNullOrEmpty(LastName))
+            {
+                patient = patient.Where(s => s.LastNamePatient.Contains(LastName));
+            }
+            if (!string.IsNullOrEmpty(FirstName))
+            {
+                patient = patient.Where(t => t.FirstNamePatient.Contains(FirstName));
+            }
+            if (!string.IsNullOrEmpty(Email))
+            {
+                patient = patient.Where(u => u.EmailPatient.Contains(Email));
+            }
+            if (!string.IsNullOrEmpty(Address))
+            {
+                patient = patient.Where(v => v.AddressPatient.Contains(Address));
+            }
+            if (!string.IsNullOrEmpty(Telephone))
+            {
+                patient = patient.Where(w => w.TelephonePatient == Telephone);
+            }
+            return View(patient.ToList());
         }
 
         // GET: Patients/Details/5

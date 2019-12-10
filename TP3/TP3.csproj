@@ -196,6 +196,10 @@
     <Compile Include="Migration\Clinic\201912101819138_UpdatePatientFKUser.Designer.cs">
       <DependentUpon>201912101819138_UpdatePatientFKUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migration\Clinic\201912101858570_UpdateDB.cs" />
+    <Compile Include="Migration\Clinic\201912101858570_UpdateDB.Designer.cs">
+      <DependentUpon>201912101858570_UpdateDB.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migration\Clinic\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Appointment.cs" />
@@ -246,8 +250,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
@@ -340,6 +342,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migration\Clinic\201912101819138_UpdatePatientFKUser.resx">
       <DependentUpon>201912101819138_UpdatePatientFKUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migration\Clinic\201912101858570_UpdateDB.resx">
+      <DependentUpon>201912101858570_UpdateDB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
