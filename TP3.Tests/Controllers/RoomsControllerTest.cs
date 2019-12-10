@@ -10,13 +10,13 @@ using TP3.Controllers;
 namespace TP3.Tests.Controllers
 {
     [TestClass]
-    public class AppointmentsControllerTest
+    public class RoomsControllerTest
     {
         [TestMethod]
         public void Index()
         {
             // Arrange
-            AppointmentsController controller = new AppointmentsController();
+            RoomsController controller = new RoomsController();
 
             // Act
             ViewResult result = controller.Index() as ViewResult;
@@ -29,7 +29,7 @@ namespace TP3.Tests.Controllers
         public void Create()
         {
             // Arrange
-            AppointmentsController controller = new AppointmentsController();
+            RoomsController controller = new RoomsController();
 
             // Act
             ViewResult result = controller.Create() as ViewResult;
@@ -43,7 +43,7 @@ namespace TP3.Tests.Controllers
         public void Edit(int? id)
         {
             // Arrange
-            AppointmentsController controller = new AppointmentsController();
+            RoomsController controller = new RoomsController();
 
             // Act
             ViewResult result = controller.Edit(id) as ViewResult;
@@ -57,7 +57,7 @@ namespace TP3.Tests.Controllers
         public void Delete(int? id)
         {
             // Arrange
-            AppointmentsController controller = new AppointmentsController();
+            RoomsController controller = new RoomsController();
 
             // Act
             ViewResult result = controller.Delete(id) as ViewResult;
