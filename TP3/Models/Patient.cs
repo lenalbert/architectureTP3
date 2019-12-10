@@ -19,10 +19,12 @@ namespace TP3.Models
         public string FirstNamePatient { get; set; }
         public string EmailPatient { get; set; }
         public string AddressPatient { get; set; }
-        public int TelephonePatient { get; set; }
+        public string TelephonePatient { get; set; }
         public Nullable<System.DateTime> BirthDatePatient { get; set; }
     
         public virtual ICollection<Appointment> Appointments { get; set; }
         public virtual ICollection<PatientRecord> PatientRecords { get; set; }
+
+        public virtual ApplicationUser User { get; set; }
     }
 }

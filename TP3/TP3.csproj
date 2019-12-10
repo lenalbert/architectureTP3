@@ -192,6 +192,10 @@
     <Compile Include="Migration\Clinic\201912101743298_InitialCreate1.Designer.cs">
       <DependentUpon>201912101743298_InitialCreate1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migration\Clinic\201912101819138_UpdatePatientFKUser.cs" />
+    <Compile Include="Migration\Clinic\201912101819138_UpdatePatientFKUser.Designer.cs">
+      <DependentUpon>201912101819138_UpdatePatientFKUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migration\Clinic\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Appointment.cs" />
@@ -333,6 +337,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migration\Clinic\201912101743298_InitialCreate1.resx">
       <DependentUpon>201912101743298_InitialCreate1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migration\Clinic\201912101819138_UpdatePatientFKUser.resx">
+      <DependentUpon>201912101819138_UpdatePatientFKUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
