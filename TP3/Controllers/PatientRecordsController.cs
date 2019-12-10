@@ -17,7 +17,8 @@ namespace TP3.Controllers
         // GET: PatientRecords
         public ActionResult Index()
         {
-            return View(db.PatientRecord.ToList());
+            var patientRecord = db.PatientRecord.Include(p => p.Patient);
+            return View(patientRecord.ToList());
         }
 
         // GET: PatientRecords/Details/5
@@ -38,6 +39,7 @@ namespace TP3.Controllers
         // GET: PatientRecords/Create
         public ActionResult Create()
         {
+            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "LastNamePatient");
             return View();
         }
 
@@ -46,7 +48,7 @@ namespace TP3.Controllers
         // plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PatientRecordID,PatientHistory")] PatientRecord patientRecord)
+        public ActionResult Create([Bind(Include = "PatientRecordID,PatientID,PatientHistory")] PatientRecord patientRecord)
         {
             if (ModelState.IsValid)
             {
@@ -55,6 +57,7 @@ namespace TP3.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "LastNamePatient", patientRecord.PatientID);
             return View(patientRecord);
         }
 
@@ -70,6 +73,7 @@ namespace TP3.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "LastNamePatient", patientRecord.PatientID);
             return View(patientRecord);
         }
 
@@ -78,7 +82,7 @@ namespace TP3.Controllers
         // plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "PatientRecordID,PatientHistory")] PatientRecord patientRecord)
+        public ActionResult Edit([Bind(Include = "PatientRecordID,PatientID,PatientHistory")] PatientRecord patientRecord)
         {
             if (ModelState.IsValid)
             {
@@ -86,6 +90,7 @@ namespace TP3.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "LastNamePatient", patientRecord.PatientID);
             return View(patientRecord);
         }
 
