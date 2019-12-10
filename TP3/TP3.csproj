@@ -178,6 +178,7 @@
     <Compile Include="Controllers\PatientRecordsController.cs" />
     <Compile Include="Controllers\PatientsController.cs" />
     <Compile Include="Controllers\ReasonsController.cs" />
+    <Compile Include="Controllers\RoleViewModelsController.cs" />
     <Compile Include="Controllers\RoomsController.cs" />
     <Compile Include="DAL\ClinicContext.cs" />
     <Compile Include="DAL\ClinicIntitializer.cs" />
@@ -204,6 +205,22 @@
     <Compile Include="Migration\Clinic\201912101914189_UpdatePAtientRecordsDB.Designer.cs">
       <DependentUpon>201912101914189_UpdatePAtientRecordsDB.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migration\Clinic\201912101955428_BDDandRole.cs" />
+    <Compile Include="Migration\Clinic\201912101955428_BDDandRole.Designer.cs">
+      <DependentUpon>201912101955428_BDDandRole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migration\Clinic\201912102057556_BDDandRole1.cs" />
+    <Compile Include="Migration\Clinic\201912102057556_BDDandRole1.Designer.cs">
+      <DependentUpon>201912102057556_BDDandRole1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migration\Clinic\201912102111189_roleUpdate.cs" />
+    <Compile Include="Migration\Clinic\201912102111189_roleUpdate.Designer.cs">
+      <DependentUpon>201912102111189_roleUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migration\Clinic\201912102151296_bugContext.cs" />
+    <Compile Include="Migration\Clinic\201912102151296_bugContext.Designer.cs">
+      <DependentUpon>201912102151296_bugContext.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migration\Clinic\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Appointment.cs" />
@@ -216,6 +233,7 @@
     <Compile Include="Models\Patient.cs" />
     <Compile Include="Models\PatientRecord.cs" />
     <Compile Include="Models\Reason.cs" />
+    <Compile Include="Models\RoleViewModel.cs" />
     <Compile Include="Models\Room.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -320,6 +338,16 @@
     <Content Include="Views\Appointments\Details.cshtml" />
     <Content Include="Views\Appointments\Edit.cshtml" />
     <Content Include="Views\Appointments\Index.cshtml" />
+    <Content Include="Views\Role\Index.cshtml" />
+    <Content Include="Views\Role\Create.cshtml" />
+    <Content Include="Views\Role\Edit.cshtml" />
+    <Content Include="Views\Role\Details.cshtml" />
+    <Content Include="Views\Role\Delete.cshtml" />
+    <Content Include="Views\RoleViewModels\Create.cshtml" />
+    <Content Include="Views\RoleViewModels\Delete.cshtml" />
+    <Content Include="Views\RoleViewModels\Details.cshtml" />
+    <Content Include="Views\RoleViewModels\Edit.cshtml" />
+    <Content Include="Views\RoleViewModels\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -352,6 +380,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migration\Clinic\201912101914189_UpdatePAtientRecordsDB.resx">
       <DependentUpon>201912101914189_UpdatePAtientRecordsDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migration\Clinic\201912101955428_BDDandRole.resx">
+      <DependentUpon>201912101955428_BDDandRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migration\Clinic\201912102057556_BDDandRole1.resx">
+      <DependentUpon>201912102057556_BDDandRole1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migration\Clinic\201912102111189_roleUpdate.resx">
+      <DependentUpon>201912102111189_roleUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migration\Clinic\201912102151296_bugContext.resx">
+      <DependentUpon>201912102151296_bugContext.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
