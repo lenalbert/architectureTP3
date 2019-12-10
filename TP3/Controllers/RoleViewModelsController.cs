@@ -10,7 +10,7 @@ using TP3.Models;
 
 namespace TP3.Controllers
 {
-    [Authorize(Roles = "Secretary")]
+    [Authorize(Roles = "Doctor")]
     public class RoleViewModelsController : Controller
     {
         private ClinicContext db = new ClinicContext();
