@@ -22,6 +22,8 @@ namespace TP3.Models
         {
             return new ClinicContext();
         }
+
+        public System.Data.Entity.DbSet<TP3.Models.RoleViewModel> RoleViewModels { get; set; }
     }
 }
 
